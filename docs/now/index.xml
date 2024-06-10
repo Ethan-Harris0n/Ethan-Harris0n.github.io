@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nows on Ethan Harrison</title>
+    <link>//localhost:1313/now/</link>
+    <description>Recent content in Nows on Ethan Harrison</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 15 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/now/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Now</title>
+      <link>//localhost:1313/now/now/</link>
+      <pubDate>Wed, 15 May 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/now/now/</guid>
+      <description>Based in Current: Cambridge, Mass, USA Recent Stopovers: Moved from Cambridge, Mass to Paris, France (Summer 2023) Moved from Colombo, Sri Lanka in Summer of 2022 to Cambridge, Ma Read (Finished Last ~Couple Months) Bunker Hill by Nathaniel Philbrick Essays by Ralph Waldo Emerson Felicity by Mary Oliver Total Freedom by Krishnamurti Blindsight by Peter Watts Solaris by Stanislaw Lem The Overstory by Richard Powers Jumpstarting America by Jonathan Gruber and Simon Johnson Zorba the Greek by Nikos Kazantzakis The Unbearable Lightness of Being by Milan Kundera Till We Have Faces by C.</description>
+    </item>
+  </channel>
+</rss>
