@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Profoutputs on Ethan Harrison</title>
-    <link>//localhost:1313/profoutput/</link>
+    <link>ethan-harris0n.github.io/profoutput/</link>
     <description>Recent content in Profoutputs on Ethan Harrison</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="//localhost:1313/profoutput/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="ethan-harris0n.github.io/profoutput/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>//localhost:1313/profoutput/outputs/</link>
+      <link>ethan-harris0n.github.io/profoutput/outputs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/profoutput/outputs/</guid>
+      <guid>ethan-harris0n.github.io/profoutput/outputs/</guid>
       <description>Energy International Energy Agency I worked at the International Energy Agency in the Tracking Sustainable Transtions team. While there, I co-authored the IEA&amp;rsquo;s inagural flagship report on Clean Cooking. I also helped build the IEA&amp;rsquo;s Database on GIS resources for energy planning (designed to help build capacity for GIS-based energy planning within energy ministries on the African continent). These can be found at the following:&#xA;Clean Cooking Report GIS Database Ongoing energy research in 2024 includes:</description>
     </item>
   </channel>
