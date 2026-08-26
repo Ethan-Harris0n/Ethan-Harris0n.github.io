@@ -1,454 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://ethan-harris0n.github.io/css/style.css">
-    <meta charset="utf-8">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    <meta name="description" content="">
-
-    
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap" rel="stylesheet" media="print" type="text/css" onload="this.media='all'">
-    
-
-    <title>
-      
-      
-          
-      
-    </title>
-    <link rel="canonical" href="https://ethan-harris0n.github.io/">
-
-    <style>
-  * {
-    border:0;
-    font:inherit;
-    font-size:100%;
-    vertical-align:baseline;
-    margin:0;
-    padding:0;
-    color: black;
-    text-decoration-skip: ink;
-  }
-
-  body {
-    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
-    font-size:17px;
-    line-height:160%;
-    color:#1d1313;
-    max-width:700px;
-    margin:auto;
-  }
-
-  p {
-    margin: 20px 0;
-  }
-
-  a img {
-    border:none;
-  }
-
-  img {
-    margin: 10px auto 10px auto;
-    max-width: 100%;
-    display: block;
-  }
-
-  .left-justify { float: left; }
-  .right-justify { float:right; }
-
-  pre, code {
-    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    background-color: #f7f7f7;
-  }
-
-  code {
-    font-size: 12px;
-    padding: 4px;
-  }
-
-  pre {
-    margin-top: 0;
-    margin-bottom: 16px;
-    word-wrap: normal;
-    padding: 16px;
-    overflow: auto;
-    font-size: 85%;
-    line-height: 1.45;
-  }
-
-  pre>code {
-    padding: 0;
-    margin: 0;
-    font-size: 100%;
-    word-break: normal;
-    white-space: pre;
-    background: transparent;
-    border: 0;
-  }
-
-  pre code {
-    display: inline;
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-    line-height: inherit;
-    word-wrap: normal;
-    background-color: transparent;
-    border: 0;
-  }
-
-  pre code::before,
-  pre code::after {
-    content: normal;
-  }
-
-  em,q,em,dfn {
-    font-style:italic;
-  }
-
-  .sans,html .gist .gist-file .gist-meta {
-    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
-  }
-
-  .mono,pre,code,tt,p code,li code {
-    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
-  }
-
-  .heading,.serif,h1,h2,h3 {
-    font-family:"Old Standard TT",serif;
-  }
-
-  strong {
-    font-weight:600;
-  }
-
-  q:before {
-    content:"\201C";
-  }
-
-  q:after {
-    content:"\201D";
-  }
-
-  del,s {
-    text-decoration:line-through;
-  }
-
-  blockquote {
-    font-family:"Old Standard TT",serif;
-    text-align:center;
-    padding:50px;
-  }
-
-  blockquote p {
-    display:inline-block;
-    font-style:italic;
-  }
-
-  blockquote:before,blockquote:after {
-    font-family:"Old Standard TT",serif;
-    content:'\201C';
-    font-size:35px;
-    color:#403c3b;
-  }
-
-  blockquote:after {
-    content:'\201D';
-  }
-
-  hr {
-    width:40%;
-    height: 1px;
-    background:#403c3b;
-    margin: 25px auto;
-  }
-
-  h1 {
-    font-size:35px;
-  }
-
-  h2 {
-    font-size:28px;
-  }
-
-  h3 {
-    font-size:22px;
-    margin-top:18px;
-  }
-
-  h1 a,h2 a,h3 a {
-    text-decoration:none;
-  }
-
-  h1,h2 {
-    margin-top:28px;
-  }
-
-  #sub-header, .date {
-    color:#403c3b;
-    font-size:13px;
-  }
-
-  #sub-header {
-    margin: 0 4px;
-  }
-
-  #nav h1 a {
-    font-size:35px;
-    color:#1d1313;
-    line-height:120%;
-  }
-
-  .posts_listing a,#nav a {
-    text-decoration: none;
-  }
-
-  li {
-    margin-left: 20px;
-  }
-
-  ul li {
-    margin-left: 5px;
-  }
-
-  ul li {
-    list-style-type: none;
-  }
-  ul li:before {
-    content:"\00BB \0020";
-  }
-
-  #nav ul li:before, .posts_listing li:before {
-    content:'';
-    margin-right:0;
-  }
-
-  #content {
-    text-align:left;
-    width:100%;
-    font-size:15px;
-    padding:60px 0 80px;
-  }
-
-  #content h1,#content h2 {
-    margin-bottom:5px;
-  }
-
-  #content h2 {
-    font-size:25px;
-  }
-
-  #content .entry-content {
-    margin-top:15px;
-  }
-
-  #content .date {
-    margin-left:3px;
-  }
-
-  #content h1 {
-    font-size:30px;
-  }
-
-  .highlight {
-    margin: 10px 0;
-  }
-
-  .posts_listing {
-    margin:0 0 50px;
-  }
-
-  .posts_listing li {
-    margin:0 0 25px 15px;
-  }
-
-  .posts_listing li a:hover,#nav a:hover {
-    text-decoration: underline;
-  }
-
-  #nav {
-    text-align:center;
-    position:static;
-    margin-top:60px;
-  }
-
-  #nav ul {
-    display: table;
-    margin: 8px auto 0 auto;
-  }
-
-  #nav li {
-    list-style-type:none;
-    display:table-cell;
-    font-size:15px;
-    padding: 0 20px;
-  }
-
-  #links {
-    display: flex;
-    justify-content: space-between;
-    margin: 50px 0 0 0;
-  }
-
-  #links :nth-child(1) {
-    margin-right:0.5em;;
-  }
-
-  #links :nth-child(2) {
-    margin-left:0.5em;;
-  }
-
-  #not-found {
-    text-align: center;
-  }
-
-  #not-found a {
-    font-family:"Old Standard TT",serif;
-    font-size: 200px;
-    text-decoration: none;
-    display: inline-block;
-    padding-top: 225px;
-  }
-
-  @media (max-width: 750px) {
-    body {
-      padding-left:20px;
-      padding-right:20px;
-    }
-
-    #nav h1 a {
-      font-size:28px;
-    }
-
-    #nav li {
-      font-size:13px;
-      padding: 0 15px;
-    }
-
-    #content {
-      margin-top:0;
-      padding-top:50px;
-      font-size:14px;
-    }
-
-    #content h1 {
-      font-size:25px;
-    }
-
-    #content h2 {
-      font-size:22px;
-    }
-
-    .posts_listing li div {
-      font-size:12px;
-    }
-  }
-
-  @media (max-width: 400px) {
-    body {
-      padding-left:20px;
-      padding-right:20px;
-    }
-
-    #nav h1 a {
-      font-size:22px;
-    }
-
-    #nav li {
-      font-size:12px;
-      padding: 0 10px;
-    }
-
-    #content {
-      margin-top:0;
-      padding-top:20px;
-      font-size:12px;
-    }
-
-    #content h1 {
-      font-size:20px;
-    }
-
-    #content h2 {
-      font-size:18px;
-    }
-
-    .posts_listing li div{
-      font-size:12px;
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    *, #nav h1 a {
-      color: #FDFDFD;
-    }
-
-    body {
-      background: #121212;
-    }
-
-    pre, code {
-      background-color: #262626;
-    }
-
-    #sub-header, .date {
-      color: #BABABA;
-    }
-
-    hr {
-      background: #EBEBEB;
-    }
-  }
-</style>
-
-
-    </head>
-
-  <body>
-    <section id=nav>
-      <h1><a class="h-card" href="https://ethan-harris0n.github.io/">Ethan Harrison</a></h1>
-      <ul>
-        
-          <li><a href="https://ethan-harris0n.github.io/now/now/">Now</a></li>
-        
-          <li><a href="https://ethan-harris0n.github.io/profoutput/outputs/">Prior Work</a></li>
-        
-      </ul>
-    </section>
-
-    
-
-<section id=content>
-  <h1>  </h1>
-
+<html lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.151.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ethan harrison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://ethan-harris0n.github.io/css/style.css">
+  <link rel="stylesheet" href="https://ethan-harris0n.github.io/css/custom.css">
+  <link rel="alternate" type="application/rss+xml" href="https://ethan-harris0n.github.io/index.xml" title="ethan harrison">
   
+</head>
+<body>
+  <div class="nb">
+    <header class="nb-header">
+      <p class="nb-name">ethan harrison</p>
+      <p class="nb-tagline">notes at the margins</p>
+      <nav class="nb-nav">
+        <a href="/" class="active">index</a>
+        
+        <a href="/notes/">notes</a>
+        
+        <a href="/projects/">projects</a>
+        
+        <a href="/shelf/">shelf</a>
+        
+        <a href="/now/">now</a>
+        
+      </nav>
+    </header>
 
-  <div class="entry-content">
-    <figure><img src="images/prof.jpg"
-    alt="My Photo" width="350px">
-</figure>
+    <main>
+      
 
-<p>Hey there!</p>
-<p>Thanks for checking out my corner of the web. I am a researcher and <a href="https://public-interest-tech.com/">public interest technologist</a> interested in finding ways to best leverage technology to improve outcomes for vulnerable populations.</p>
-<p>I&rsquo;ve worked in Europe, Africa, Asia, and Latin America solving challenges related to conflict, energy, migration, and humanitarian response. Currently, I am a graduate student at MIT, where I am studying Technology and Policy and Electrical Engineering / Computer Science.</p>
-<p>In my free time I love to go on outdoor adventures, read, and pursue a number of random hobbies. You can find my professional details, contact information, what I&rsquo;m currently up to (with a slight lag). Some stuff to check out while you are here:</p>
-<ul>
-<li>Formal CV <a href="https://www.dropbox.com/scl/fi/sp50qo2moyfsdn4t63ibf/CV_MIT_Recent.pdf?rlkey=4riqm06pphmp3b3miys3s2wqh&amp;dl=0">here</a></li>
-<li>Portfolio of prior professional work / interests <a href="https://ethan-harris0n.github.io/profoutput/outputs/">here</a></li>
-<li>Where I am currently located in the world, what I&rsquo;m currently up to / doing / and the latest random hobby <a href="https://ethan-harris0n.github.io/now/now/">here</a></li>
-</ul>
+<p class="nb-date-stamp">// last built: jul 2026</p>
 
+<div class="nb-bio nb-prose"><blockquote>
+<p>Hi, I&rsquo;m Ethan.</p>
+<p>I&rsquo;m a first-year PhD student at MIT working on energy access in fragile contexts — climate-affected islands, conflict zones, post-conflict settings, displacement camps. I&rsquo;m interested in how ownership of energy and critical infrastructure can create economic and political sovereignty for communities.</p>
+<p>(currently) I split time between Cambridge, Mass in the US and a never-ending renovation of an 18th-century farm in the rural Basque country of France my family and I bought together. I am a keen reader, motorcyclist, waterman, and (slow) developing engineer. In prior lives, I was a surf bum and English teacher in Latin America, a UN data scientist and humanitarian in South Asia, and ran M&amp;E systems in East Africa for the randomistas during the peak of the RCT craze.</p></blockquote>
+<hr>
+<p>This website is part digital notebook / part commitment device but mostly a message in a bottle. If you&rsquo;re in Cambridge or somewhere else in the world, please don&rsquo;t hesitate to shoot me an email (echarr@mit.edu).</p>
+</div>
+
+
+
+
+<div class="nb-section-label">recent notes</div>
+
+<div class="nb-entry">
+  <div class="nb-entry-meta">22 jan 2026</div>
+  
+  <div class="nb-entry-title"><a href="https://ethan-harris0n.github.io/notes/gap-year-log/">gap year log</a></div>
+  
+  <div class="nb-entry-body">I decided not to take/search for a job after graduating. I thought it would be cool to log what a year off from career …</div>
+  
+</div>
+
+<div class="nb-entry">
+  <div class="nb-entry-meta">21 jan 2026</div>
+  
+  <div class="nb-entry-title"><a href="https://ethan-harris0n.github.io/notes/random-reading-recs/">random reading recs</a></div>
+  
+  <div class="nb-entry-body">(a compilation of WhatsApp texts)
+Wind in the Willows — Wisdom in levity. Tolstoy&rsquo;s A Confession — Timeless in its …</div>
+  
+</div>
+
+
+
+
+
+
+<div class="nb-section-label">active projects</div>
+<div class="nb-projects">
+  
+  <div class="nb-project">
+    <div class="nb-project-title">Moose</div>
+    <div class="nb-project-desc">Predictive O&amp;M platform for decentralized renewables. Piloting with First Nations communities in Canada.</div>
   </div>
-
-  <div id=links>
-    
-    
+  
+  <div class="nb-project">
+    <div class="nb-project-title">PhD research</div>
+    <div class="nb-project-desc">Energy systems in climate-affected and fragile states. Field collaborations with SELCO in India and First Nations in Canada.</div>
   </div>
-</section>
+  
+  <div class="nb-project">
+    <div class="nb-project-title">farmhouse</div>
+    <div class="nb-project-desc">18th-century farmhouse in the french Pyrenees rennovating with family</div>
+  </div>
+  
+</div>
 
 
 
+    </main>
 
+    <footer class="nb-footer">
+      <span>ethan harrison (<a href="/cv/">cv</a>) // Gers, France</span>
+      <span>← built with hugo &#43; claude &#43; caffeine, Lamplighter Brewing Co.</span>
+    </footer>
+  </div>
+</body>
+</html>

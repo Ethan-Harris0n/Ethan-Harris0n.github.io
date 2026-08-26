@@ -1,0 +1,129 @@
+/* ─── base photo overrides ────────────────────────────────── */
+.nb-prose img {
+  max-width: 100%;
+  display: block;
+  margin: 1.4rem auto;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+}
+
+/* ─── photo cards (no white border, just shadow + rotation) ── */
+.polaroid {
+  transform: rotate(var(--rot, -1.5deg));
+  display: inline-block;
+  flex: 0 0 auto;
+  border-radius: 3px;
+  box-shadow: 4px 8px 24px rgba(0,0,0,0.28), 0 2px 6px rgba(0,0,0,0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+.polaroid img {
+  display: block !important;
+  width: 300px !important;
+  height: 225px !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* pair: two cards side by side */
+.photo-pair {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 2rem 0 2.8rem;
+}
+
+/* trio: three cards */
+.photo-trio {
+  display: flex;
+  gap: 1.4rem;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 2rem 0 2.8rem;
+}
+
+.photo-trio .polaroid img {
+  width: 230px !important;
+  height: 172px !important;
+}
+
+/* single — nudged right */
+.photo-single {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1.5rem 0 2.2rem;
+}
+
+/* ─── featured photo — breaks out of column ──────────────── */
+.feature-photo {
+  margin: 2rem -40px 2.5rem;
+  transform: rotate(-0.8deg);
+  border-radius: 4px;
+  box-shadow: 4px 10px 32px rgba(0,0,0,0.3), 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.feature-photo img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: unset !important;
+  display: block !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* edge vignette */
+.feature-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.28) 100%);
+  pointer-events: none;
+}
+
+/* ─── film strip ──────────────────────────────────────────── */
+.film-strip {
+  display: flex;
+  background: #141414;
+  padding: 20px 10px;
+  gap: 6px;
+  margin: 2rem 0;
+  position: relative;
+  border-radius: 2px;
+}
+
+.film-strip::before,
+.film-strip::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 12px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,    transparent 8px,
+    #141414 8px,  #141414 10px,
+    transparent 10px, transparent 26px
+  );
+}
+.film-strip::before { top: 4px; }
+.film-strip::after  { bottom: 4px; }
+
+.film-strip img {
+  flex: 1 !important;
+  height: 210px !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  filter: contrast(1.06) saturate(0.88);
+}

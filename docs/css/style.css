@@ -1,13 +1,596 @@
-.center-text {
-    text-align: center;
+/* ─── reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── base ──────────────────────────────────────────────── */
+html, body {
+  background: #f5f0e8;
+  color: #2a2520;
+  font-family: 'IBM Plex Mono', monospace;
+  border-left: 3px solid #c8bfa8;
 }
 
-.spacing {
-    margin-top: 20px;
-    margin-bottom: 20px;
+/* ─── wrapper ───────────────────────────────────────────── */
+.nb {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem 2.5rem 4rem;
+  min-height: 100vh;
+  position: relative;
 }
 
+.nb::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2rem;
+  width: 1px;
+  background: #c8bfa8;
+}
 
-.paragraph-spacing {
-    margin-bottom: 4em; /* Adjust the value as needed */
+/* ─── header ────────────────────────────────────────────── */
+.nb-header {
+  border-bottom: 1px solid #b8ae98;
+  padding-bottom: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.nb-name {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #2a2520;
+  margin-bottom: 4px;
+}
+
+.nb-tagline {
+  font-size: 11px;
+  color: #7a6f62;
+  font-style: italic;
+  font-family: 'Lora', serif;
+  margin-bottom: 1rem;
+}
+
+/* ─── nav ───────────────────────────────────────────────── */
+.nb-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 11px;
+  color: #7a6f62;
+  flex-wrap: wrap;
+}
+
+.nb-nav a {
+  color: #5a4f42;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.nb-nav a:hover {
+  border-bottom-color: #5a4f42;
+}
+
+.nb-nav .active {
+  color: #2a2520;
+  font-weight: 500;
+}
+
+/* ─── date stamp ─────────────────────────────────────────── */
+.nb-date-stamp {
+  font-size: 11px;
+  color: #7a6f62;
+  margin-bottom: 2rem;
+  letter-spacing: 0.08em;
+}
+
+/* ─── section labels ─────────────────────────────────────── */
+.nb-section-label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: #7a6f62;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nb-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #c8bfa8;
+}
+
+.nb-section-label--no-rule::after {
+  display: none;
+}
+
+/* ─── intro ──────────────────────────────────────────────── */
+.nb-bio {
+  font-family: 'Lora', serif;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #3a3028;
+  margin-bottom: 2rem;
+}
+
+.nb-bio p { margin-bottom: 0.9rem; }
+.nb-bio p:last-child { margin-bottom: 0; }
+.nb-bio blockquote { font-style: normal; font-size: 13px; }
+
+.nb-intro {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3a3028;
+  margin-bottom: 2rem;
+}
+
+.nb-intro-link {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: #7a6f62;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.nb-intro-link:hover {
+  border-bottom-color: #7a6f62;
+}
+
+/* ─── entries (notes) ────────────────────────────────────── */
+.nb-entry {
+  margin-bottom: 1.8rem;
+  padding-left: 1rem;
+  border-left: 3px solid #9a8878;
+}
+
+.nb-entry-meta {
+  font-size: 11px;
+  color: #7a6f62;
+  margin-bottom: 4px;
+}
+
+.nb-entry-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2a2520;
+  margin-bottom: 4px;
+}
+
+.nb-entry-title a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.nb-entry-title a:hover {
+  border-bottom-color: #2a2520;
+}
+
+.nb-entry-body {
+  font-size: 12px;
+  color: #5a4f42;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ─── tags ───────────────────────────────────────────────── */
+.nb-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.nb-tag {
+  font-size: 10px;
+  color: #7a6f62;
+  background: #e8e0d0;
+  padding: 2px 7px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.nb-tag:hover {
+  color: #2a2520;
+}
+
+/* ─── shelf diary ────────────────────────────────────────── */
+.nb-diary-recs-link {
+  color: #7a6f62;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.nb-diary-recs-link:hover {
+  border-bottom-color: #7a6f62;
+}
+
+.nb-diary-entry {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px dashed #b8ae98;
+}
+
+.nb-diary-entry:last-child {
+  border-bottom: none;
+}
+
+.nb-diary-date {
+  font-size: 11px;
+  color: #7a6f62;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.nb-diary-source {
+  font-size: 12px;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #7a6f62;
+  margin-bottom: 0.4rem;
+}
+
+.nb-diary-body {
+  font-size: 14px;
+}
+
+/* ─── shelf (legacy — kept for data/books.yaml use elsewhere) */
+.nb-shelf-group-label {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a8f82;
+  background: #e8e0d0;
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 2px;
+  margin: 1.5rem 0 0.6rem;
+}
+
+.nb-shelf {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nb-book {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.nb-book-spine {
+  width: 5px;
+  min-height: 40px;
+  border-radius: 1px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.nb-book-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2a2520;
+  line-height: 1.3;
+}
+
+.nb-book-author {
+  font-weight: 400;
+  color: #7a6f62;
+}
+
+.nb-book-year {
+  font-weight: 400;
+  color: #9a8f82;
+}
+
+.nb-book-note {
+  font-size: 11px;
+  color: #5a4f42;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.nb-book-quote {
+  font-size: 11px;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #9a8f82;
+  margin-top: 5px;
+  padding-left: 8px;
+  border-left: 1px solid #c8bfa8;
+  line-height: 1.5;
+}
+
+/* ─── projects ───────────────────────────────────────────── */
+.nb-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.nb-project {
+  padding: 10px 12px;
+  background: #ede8dc;
+  border-radius: 2px;
+  border-bottom: 2px solid #b8ae98;
+}
+
+.nb-project-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2a2520;
+  margin-bottom: 4px;
+}
+
+.nb-project-desc {
+  font-size: 11px;
+  color: #6a5f52;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ─── prose (single pages) ───────────────────────────────── */
+.nb-prose {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #3a3028;
+}
+
+.nb-prose h1, .nb-prose h2, .nb-prose h3 {
+  font-family: 'IBM Plex Mono', monospace;
+  color: #2a2520;
+  font-weight: 500;
+  margin: 2rem 0 0.8rem;
+}
+
+.nb-prose h1 { font-size: 15px; }
+.nb-prose h2 { font-size: 13px; letter-spacing: 0.05em; }
+.nb-prose h3 { font-size: 12px; color: #7a6f62; }
+
+.nb-prose p { margin-bottom: 1.2rem; }
+
+.nb-prose a {
+  color: #5a4f42;
+  border-bottom: 1px solid #c8bfa8;
+  text-decoration: none;
+}
+
+.nb-prose a:hover {
+  border-bottom-color: #5a4f42;
+}
+
+.nb-prose strong {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  color: #2a2520;
+}
+
+.nb-prose ul, .nb-prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.nb-prose li { margin-bottom: 0.4rem; }
+
+.nb-prose blockquote {
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 2px solid #c8bfa8;
+  color: #5a4f42;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 2rem 0;
+}
+
+.nb-prose blockquote p {
+  margin-bottom: 0.6rem;
+}
+
+.nb-prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.nb-prose code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  background: #ede8dc;
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+.nb-prose pre {
+  background: #ede8dc;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-left: 2px solid #c8bfa8;
+}
+
+.nb-prose pre code {
+  background: none;
+  padding: 0;
+}
+
+.nb-prose hr {
+  border: none;
+  border-top: 1px dashed #b8ae98;
+  margin: 2rem 0;
+}
+
+/* ─── footnotes ──────────────────────────────────────────── */
+.nb-prose sup {
+  font-size: 10px;
+  line-height: 1;
+  vertical-align: super;
+  color: #7a6f62;
+}
+
+.nb-prose .footnote-ref {
+  color: #7a6f62;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nb-prose .footnotes {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #b8ae98;
+}
+
+.nb-prose .footnotes hr { display: none; }
+
+.nb-prose .footnotes ol {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
+
+.nb-prose .footnotes li {
+  font-size: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #7a6f62;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.nb-prose .footnotes li p {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.nb-prose .footnote-backref {
+  color: #9a8f82;
+  text-decoration: none;
+  border-bottom: none;
+  margin-left: 4px;
+}
+
+/* ─── images ─────────────────────────────────────────────── */
+.nb-prose img {
+  max-width: 75%;
+  display: block;
+  margin: 2rem auto;
+  border: 1px solid #c8bfa8;
+}
+
+.nb-prose figure {
+  margin: 2rem 0;
+}
+
+.nb-prose figure img {
+  margin: 0 0 0.6rem;
+}
+
+.nb-prose figcaption {
+  font-size: 11px;
+  color: #7a6f62;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ─── now page photo ─────────────────────────────────────── */
+.nb-now-photo {
+  float: right;
+  width: 160px;
+  margin: 0.2rem 0 1rem 2rem;
+  transform: rotate(1.5deg);
+  flex-shrink: 0;
+}
+
+.nb-now-photo img {
+  width: 100%;
+  display: block;
+  border: 1px solid #c8bfa8;
+}
+
+.nb-prose::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.nb-now-credit {
+  display: block;
+  margin-top: 2.5rem;
+  font-size: 10px;
+  color: #9a8f82;
+  letter-spacing: 0.05em;
+}
+
+.nb-now-credit a {
+  color: #9a8f82;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ─── page title block ───────────────────────────────────── */
+.nb-page-title {
+  margin-bottom: 2rem;
+}
+
+.nb-page-title h1 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2a2520;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.nb-page-title .nb-entry-meta {
+  margin-bottom: 0;
+}
+
+/* ─── list pages ─────────────────────────────────────────── */
+.nb-list-header {
+  margin-bottom: 2rem;
+}
+
+.nb-list-header h1 {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a8f82;
+}
+
+/* ─── footer ─────────────────────────────────────────────── */
+.nb-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #b8ae98;
+  font-size: 11px;
+  color: #7a6f62;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ─── responsive ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .nb {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .nb::before {
+    display: none;
+  }
+
+  .nb-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .nb-footer {
+    flex-direction: column;
+    gap: 4px;
+  }
 }
